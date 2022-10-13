@@ -1,0 +1,16 @@
+name: Project automation
+
+on:
+  issues:
+    types:
+      - opened
+
+jobs:
+  add_issue_to_project:
+    name: Add new issues to project board
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          gh api graphql -f query='mutation($project:ID!, $issue:ID!) { addProjectNextItem(input: {projectId: $project, contentId: $issue}) { projectNextItem { id }  } }' -f project=1 -f issue=${{ github.event.issue.node_id }}
+        env:
+          GITHUB_TOKEN: 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
