@@ -11,6 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          gh api graphql -f query='mutation($project:ID!, $issue:ID!) { addProjectNextItem(input: {projectId: $project, contentId: $issue}) { projectNextItem { id }  } }' -f project=1873376= -f issue=${{ github.event.issue.node_id }}
+          gh api graphql -f query='mutation($project:ID!, $issue:ID!) { addProjectNextItem(input: {projectId: $project, contentId: $issue}) { projectNextItem { id }  } }' -f project=1873376 -f issue=${{ github.event.issue.node_id }}
         env:
           GITHUB_TOKEN: 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
