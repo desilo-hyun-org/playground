@@ -1,0 +1,14 @@
+name: test
+
+on:
+  pull_request:
+  merge_group:
+
+jobs:
+  e2e:
+    name: E2E
+    if: contains(github.event.pull_request.body, 'run e2e')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Success
+        run: sleep 30s && echo success
