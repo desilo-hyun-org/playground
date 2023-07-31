@@ -11,4 +11,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Success
-        run: sleep 30s && return 0
+        run: sleep 30s && return -1
