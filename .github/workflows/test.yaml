@@ -3,7 +3,6 @@ name: test
 on:
   pull_request:
   merge_group:
-    types: [checks_requested]
 
 jobs:
   e2e:
@@ -11,4 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Success
-        run: sleep 30s && return -1
+        run: sleep 30s && echo 0
